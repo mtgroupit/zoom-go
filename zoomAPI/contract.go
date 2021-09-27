@@ -37,6 +37,18 @@ type CreateMeetingRequest struct {
 	Settings    Settings   `json:"settings"`
 }
 
+type CreateWebinarRequest struct {
+	Topic      string     `json:"topic"`
+	Type       int        `json:"type"`
+	StartTime  string     `json:"start_time"`
+	Duration   int        `json:"duration"`
+	Timezone   string     `json:"timezone"`
+	Password   string     `json:"password"`
+	Agenda     string     `json:"agenda"`
+	Recurrence Recurrence `json:"recurrence"`
+	Settings   Settings   `json:"settings"`
+}
+
 type Recurrence struct {
 	Type           int    `json:"type"`
 	RepeatInterval int    `json:"repeat_interval"`
@@ -109,6 +121,74 @@ type CreateMeetingResponse struct {
 	Topic     string    `json:"topic"`
 	Type      int       `json:"type"`
 	UUID      string    `json:"uuid"`
+}
+
+type CreateWebinarResponse struct {
+	UUID                         string    `json:"uuid"`
+	Id                           int       `json:"id"`
+	HostId                       string    `json:"host_id"`
+	HostEmail                    string    `json:"host_email"`
+	RegistrantsConfirmationEmail bool      `json:"registrants_confirmation_email"`
+	TemplateID                   string    `json:"template_id"`
+	Topic                        string    `json:"topic"`
+	Type                         int       `json:"type"`
+	StartTime                    time.Time `json:"start_time"`
+	Duration                     int       `json:"duration"`
+	Timezone                     string    `json:"timezone"`
+	Agenda                       string    `json:"agenda"`
+	CreatedAt                    time.Time `json:"created_at"`
+	StartUrl                     string    `json:"start_url"`
+	JoinUrl                      string    `json:"join_url"`
+	TrackingFields               []struct {
+		Field string `json:"field"`
+		Value string `json:"value"`
+	} `json:"tracking_fields"`
+	Occurrences []struct {
+		OccurrenceID string    `json:"occurrence_id"`
+		StartTime    time.Time `json:"start_time"`
+		Duration     int       `json:"duration"`
+		Status       string    `json:"status"`
+	} `json:"occurrences"`
+	Settings struct {
+		HostVideo                    bool     `json:"host_video"`
+		PanelistsVideo               bool     `json:"panelists_video"`
+		PracticeSession              bool     `json:"practice_session"`
+		HDVideo                      bool     `json:"hd_video"`
+		HDVideoForAttendees          bool     `json:"hd_video_for_attendees"`
+		Send1080pVideoForAttendees   bool     `json:"send_1080p_video_for_attendees"`
+		ApprovalType                 int      `json:"approval_type"`
+		RegistrationType             int      `json:"registration_type"`
+		Audio                        string   `json:"audio"`
+		AutoRecording                string   `json:"auto_recording"`
+		EnforceLogin                 bool     `json:"enforce_login"`
+		EnforceLoginDomains          string   `json:"enforce_login_domains"`
+		AlternativeHosts             string   `json:"alternative_hosts"`
+		CloseRegistration            bool     `json:"close_registration"`
+		ShowShareButton              bool     `json:"show_share_button"`
+		AllowMultipleDevices         bool     `json:"allow_multiple_devices"`
+		OnDemand                     bool     `json:"on_demand"`
+		GlobalDialInCountries        []string `json:"global_dial_in_countries"`
+		ContactName                  string   `json:"contact_name"`
+		ContactEmail                 string   `json:"contact_email"`
+		RegistrantsConfirmationEmail bool     `json:"registrants_confirmation_email"`
+		RegistrantsRestrictNumber    bool     `json:"registrants_restrict_number"`
+		NotifyRegistrants            bool     `json:"notify_registrants"`
+		PostWebinarSurvey            bool     `json:"post_webinar_survey"`
+		SurveyURL                    string   `json:"survey_url"`
+		RegistrantsEmailNotification bool     `json:"registrants_email_notification"`
+		MeetingAuthentication        bool     `json:"meeting_authentication"`
+		AuthenticationOption         string   `json:"authentication_option"`
+		AuthenticationDomains        string   `json:"authentication_domains"`
+		AuthenticationName           string   `json:"authentication_name"`
+		// question_and_answer
+		EmailLanguage                        string `json:"email_language"`
+		PanelistsInvitationEmailNotification bool   `json:"panelists_invitation_email_notification"`
+		// attendees_and_panelists_reminder_email_notification
+		// follow_up_attendees_email_notification
+		// follow_up_absentees_email_notification
+	} `json:"settings"`
+	// recurrence
+	Password string `json:"password"`
 }
 
 type GetMeetingResponse struct {
