@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/donvito/zoom-go/zoomAPI"
-	"github.com/donvito/zoom-go/zoomAPI/constants/meeting"
+	"github.com/seturon/zoom-go/zoomAPI"
+	"github.com/seturon/zoom-go/zoomAPI/constants/meeting"
 	"log"
 	"os"
 )
