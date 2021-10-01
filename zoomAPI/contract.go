@@ -171,7 +171,7 @@ type CreateWebinarResponse struct {
 		ContactName                  string   `json:"contact_name"`
 		ContactEmail                 string   `json:"contact_email"`
 		RegistrantsConfirmationEmail bool     `json:"registrants_confirmation_email"`
-		RegistrantsRestrictNumber    bool     `json:"registrants_restrict_number"`
+		RegistrantsRestrictNumber    int     `json:"registrants_restrict_number"`
 		NotifyRegistrants            bool     `json:"notify_registrants"`
 		PostWebinarSurvey            bool     `json:"post_webinar_survey"`
 		SurveyURL                    string   `json:"survey_url"`
