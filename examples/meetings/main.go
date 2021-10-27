@@ -5,8 +5,8 @@ import (
 	"log"
 	"os"
 
-	"github.com/Lisss13/zoom-go/zoomAPI"
-	"github.com/Lisss13/zoom-go/zoomAPI/constants/meeting"
+	"github.com/mtgroupit/zoom-go/zoomAPI"
+	"github.com/mtgroupit/zoom-go/zoomAPI/constants/meeting"
 )
 
 func main() {
