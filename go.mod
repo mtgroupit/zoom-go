@@ -1,3 +1,3 @@
-module github.com/seturon/zoom-go
+module github.com/Lisss13/zoom-go
 
-go 1.13
+go 1.17

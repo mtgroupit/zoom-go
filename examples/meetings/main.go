@@ -2,10 +2,11 @@ package main
 
 import (
 	"fmt"
-	"github.com/seturon/zoom-go/zoomAPI"
-	"github.com/seturon/zoom-go/zoomAPI/constants/meeting"
 	"log"
 	"os"
+
+	"github.com/Lisss13/zoom-go/zoomAPI"
+	"github.com/Lisss13/zoom-go/zoomAPI/constants/meeting"
 )
 
 func main() {
@@ -196,7 +197,7 @@ func listMeetingRegistrantsExample() {
 
 }
 
-func updateMeetingStatusExample(){
+func updateMeetingStatusExample() {
 
 	//Create a new Zoom API client
 	apiClient := zoomAPI.NewClient(os.Getenv("ZOOM_API_URL"),
